@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       MyGallery.index
+GET     /manage                                 manage.index
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+#eyecandy gallery url
+GET     /{url}                                MyGallery.display
+GET     /{url}/                               MyGallery.display
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

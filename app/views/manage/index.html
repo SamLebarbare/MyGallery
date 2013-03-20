@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'Manager' /}
+<img src="/public/images/themes/logo.png">
+<h1>Manager</h1>
+<table>
+    #{list all,as:'g'}
+    <tr>
+        
+        <td><a href="@{manage.edit(g.id)}">${g.title}</a></td>
+        <td><a href="@{manage.upload(g.id)}">+</a></td>
+        <td>(${g.photos.size()} images)</td>
+    </tr>
+    #{/list}
+        
+</table>
+
+
+
+<a href="@{manage.create()}">ajouter</a>
+    <p class="footer">
+Apache v2 <a href="http://www.loup.io" target="_blank">Samuel Loup</a></p>
+  </div>
+
+
+
+

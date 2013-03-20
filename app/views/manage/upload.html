@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Upload' /}
+
+<h1>Manager</h1>
+
+<h2>Add image</h2>
+#{form @manage.postFile(g.id), method:'POST', enctype:'multipart/form-data'}
+<input id="file" name="img" type="file"/>
+<br>
+<input type="submit" data-theme="a" value="envoyer"/>
+#{/form}
+<table>
+    #{list items:g.photos, as:'i'}
+    <tr>
+        <td><img src="/public/images/gallery/${i.filename}" width="200px" /></td>  
+        <td><a href="@{manage.deletePhoto(g.id,i.id)}">delete</a></td>
+    </tr>
+    #{/list}
+</table>
+
+<div data-role="footer">
+<a href="@{manage.index()}" target="_blank">back</a></div>
+    <p class="footer">
+Apache v2 <a href="http://www.loup.io" target="_blank">Samuel Loup</a></p>
+  </div>
+
+
+

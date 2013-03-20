@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Edit' /}
+
+<h1>Manager</h1>
+
+<hr>
+<h2>Edit</h2>
+#{form @manage.editGallery(g.id), method:'POST'}
+<label for="url">URL: </label>http://www.exemple.com/<input id="url" name="url" type="text" value="${g.url}"/>
+<br>
+<label for="title">Title: </label><input id="title" name="title" type="text"  value="${g.title}"/>
+<br>
+<label for="subtitle">Sub-title: </label><input id="subtitle" name="subtitle" type="text"  value="${g.subtitle}"/>
+<br>
+<input type="submit" data-theme="a" value="modifier"/>
+#{/form}
+
+<div data-role="footer">
+<a href="@{manage.index()}" target="_blank">back</a></div>
+    <p class="footer">
+Apache v2 <a href="http://www.loup.io" target="_blank">Samuel Loup</a></p>
+  </div>
+
+
+

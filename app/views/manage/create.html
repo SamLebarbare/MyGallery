@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Add' /}
+<img src="/public/images/themes/logo.png">
+<h1>Manager</h1>  
+#{form @manage.createGallery(), method:'POST'}
+<label for="url">URL: </label>http://www.exemple.com/<input id="url" name="url" type="text"/>
+<label for="title">Title: </label><input id="title" name="title" type="text"/>
+<label for="subtitle">Sub-title: </label><input id="subtitle" name="subtitle" type="text"/>
+<br>
+<input type="submit" />
+#{/form}
+    <p class="footer">
+Apache v2 <a href="http://www.loup.io" target="_blank">Samuel Loup</a></p>
+  </div>
+
+
+

@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'My Gallery' /}
+<img src="/public/images/themes/logo.png">
+<h1>${g.title}</h1>
+    <h2>${g.subtitle}</h2>
+
+    <!-- Slideshow 1 -->
+    #{if g.photos}
+    <div class="callbacks_container">
+      <ul class="rslides" id="slider3">
+          
+            #{list items:g.photos, as:'i'}
+            <li>
+                <img src="/public/images/gallery/${i.filename}" alt="" /><a href="@{gallery.download(i.id)}">download</a>
+            </li>           
+            #{/list}
+          
+      </ul>
+    </div>
+    #{/if}
+    <p class="footer">
+Apache v2 <a href="http://www.loup.io" target="_blank">Samuel Loup</a></p>
+  </div>
+
+
+
